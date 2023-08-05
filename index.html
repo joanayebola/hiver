@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="lightslider.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>HIVER</title>
+</head>
+
+<body>
+    <div class="preloader">
+        <span class="letter">H</span>
+        <span class="letter">I</span>
+        <span class="letter">V</span>
+        <span class="letter">E</span>
+        <span class="letter">R</span>
+    </div>
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#"> <span class="color"> H I </span>V E R</a>
+                <button class="justify-content-center navbar-toggler custom-toggler" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="collections.html" class="nav-link">Collections</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navbar-nav" id="cart"> <a href="cart.html" class="nav-item nav-link" aria-hidden="true">
+                        &#128722;</a> </div>
+                <span class="cart-badge" id="cartCount">0</span>
+            </div>
+        </nav>
+
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Explore Our Stunning <span class="color">Makeup</span> Collection <br> Let Your <span
+                        class="color">Makeup</span>
+                    Tell Your Story</h1>
+            </div>
+
+            <div class="hero-image">
+                <img src="bg-image.png" alt="">
+            </div>
+        </div>
+
+
+
+        <div class="container" data-aos="fade-up" data-aos-duration="2000">
+            <div class="highlight">
+                <div class="item"><img src="highlight1.jpg" alt=""></div>
+                <div class="item"><img src="highlight2.jpg" alt=""></div>
+                <div class="item"><img src="highlight3.jpg" alt=""></div>
+            </div>
+        </div>
+
+        <div class="key-container container" data-aos="fade-up" data-aos-duration="2000">
+            <div class="key">
+                <h2>Cruelty-Free Products</h2>
+            </div>
+            <div class="key">
+                <h2>High Quality</h2>
+            </div>
+            <div class="key">
+                <h2>Innovative Formulas</h2>
+            </div>
+        </div>
+
+
+        <div class="about-container container">
+            <div class="about-content" data-aos="faderight" data-aos-duration="2000">
+                <h2>Welcome to <span class="color">HI</span>VER</h2>
+                <p>At <span class="color">HI</span>VER we are passionate about beauty and self-expression. Our makeup
+                    line
+                    celebrates the diversity and individuality that makes each person truly remarkable. We believe that
+                    makeup is an art form and it is our mission to provide you with the tools and products to express
+                    your
+                    unique beauty confidently.</p>
+                <p>Our mission is to empower individuals to embrace their true selves through high-quality, cruelty-free
+                    makeup products. We strive to break beauty stereotypes and create a world where everyone feels
+                    accepted.
+                    Inclusivity is at the core of our values and we are dedicated to offering a diverse range of shades
+                    and
+                    products for all skin tones and types.</p>
+            </div>
+
+            <div class="about-content" data-aos="fade-left" data-aos-duration="2000">
+                <img src="bg-makeup.jpg" alt="">
+            </div>
+        </div>
+        <div class="shop-text">
+            <h2>BEST RATED</h2>
+            <a href="collections.html">➡️Shop All</a>
+        </div>
+
+        <!-- <ul id="autoWidth" class="cs-hidden">
+            <li class="item-a">
+                <div class="box">
+                    <div class="slide-img">
+                        <img src="eye glitter.jpg" alt="" />
+                        <div class="overlay">
+
+                        </div>
+                    </div>
+                    <div class="detail-box">
+                        <div class="type">
+                            <a href="#">Eye Glitter</a>
+                            <span>Loose</span>
+                        </div>
+                        <a href="#" class="price">2000</a>
+                    </div>
+                </div>
+            </li>
+            <li class="item-b">
+                <div class="box">
+                    <div class="slide-img">
+                        <img src="foundation.jpg" alt="" />
+                        <div class="overlay">
+                            <p class="buy-btn" onclick="addToCart('Foundation', '5000', 'foundation.jpg', 'Liquid')">Add
+                                to
+                                Cart
+                            </p>
+                        </div>
+                    </div>
+                    <div class="detail-box">
+                        <div class="type">
+                            <a href="#">Foundation</a>
+                            <span>Liquid</span>
+                        </div>
+                        <a href="#" class="price">5000</a>
+                    </div>
+                </div>
+            </li>
+            <li class="item-c">
+                <div class="box">
+                    <div class="slide-img">
+                        <img src="eye shadow pallete.jpg" alt="" />
+                        <div class="overlay">
+                            <p class="buy-btn"
+                                onclick="addToCart('Eye Shadow Palette', '2000', 'eye shadow pallete.jpg', 'Cream' )">
+                                Add to Cart</p>
+                        </div>
+                    </div>
+                    <div class="detail-box">
+                        <div class="type">
+                            <a href="#">Eye Shadow</a>
+                            <span>Cream</span>
+                        </div>
+                        <a href="#" class="price">2000</a>
+                    </div>
+                </div>
+            </li>
+            <li class="item-d">
+                <div class="box">
+                    <div class="slide-img">
+                        <img src="highlight1.jpg" alt="" />
+                        <div class="overlay">
+                            <p class="buy-btn" onclick="addToCart('Blush', '2500', 'highlight1.jpg', 'Cream' )">Add to
+                                Cart
+                            </p>
+                        </div>
+                    </div>
+                    <div class="detail-box">
+                        <div class="type">
+                            <a href="#"> Blush </a>
+                            <span>Cream</span>
+                        </div>
+                        <a href="#" class="price">2500</a>
+                    </div>
+                </div>
+            </li>
+            <li class="item-e">
+                <div class="box">
+                    <div class="slide-img">
+                        <img src="highlight2.jpg" alt="" />
+                        <div class="overlay">
+                            <p class="buy-btn" onclick="addToCart('Highlight', '3000', 'highlight2.jpg', 'Face')">Add to
+                                Cart
+                            </p>
+                        </div>
+                    </div>
+                    <div class="detail-box">
+                        <div class="type">
+                            <a href="#">Primer</a>
+                            <span>Face</span>
+                        </div>
+                        <a href="#" class="price">3000</a>
+                    </div>
+                </div>
+            </li>
+            <li class="item-f">
+                <div class="box">
+                    <div class="slide-img">
+                        <img src="brush.jpg" alt="" />
+                        <div class="overlay">
+                            <p class="buy-btn" onclick="addToCart('Brush', '5000', 'brush.jpg', 'Powder')">Add to Cart
+                            </p>
+                        </div>
+                    </div>
+                    <div class="detail-box">
+                        <div class="type">
+                            <a href="#">Brush</a>
+                            <span>Powder</span>
+                        </div>
+                        <a href="#" class="price">5000</a>
+                    </div>
+                </div>
+            </li>
+            <li class="item-g">
+                <div class="box">
+                    <div class="slide-img">
+                        <img src="mascara.jpg" alt="" />
+                        <div class="overlay">
+                            <p class="buy-btn" onclick="addToCart('Mascara', '2000', 'mascara.jpg', 'Colored')">Add to
+                                Cart
+                            </p>
+                        </div>
+                    </div>
+                    <div class="detail-box">
+                        <div class="type">
+                            <a href="#">Mascara</a>
+                            <span>Colored</span>
+                        </div>
+                        <a href="#" class="price">2000</a>
+                    </div>
+                </div>
+            </li>
+            <li class="item-h">
+                <div class="box">
+                    <div class="slide-img">
+                        <img src="lipstick.jpg" alt="" />
+                        <div class="overlay">
+                            <p class="buy-btn" onclick="addToCart('Lipstick', '3000', 'lipstick.jpg', 'Matte')">Add to
+                                Cart
+                            </p>
+                        </div>
+                    </div>
+                    <div class="detail-box">
+                        <div class="type">
+                            <a href="#">Lip Stick</a>
+                            <span>Matte</span>
+                        </div>
+                        <a href="#">3000</a>
+                    </div>
+                </div>
+            </li>
+        </ul> -->
+
+
+        <div class="slider-container">
+            <div class="slider-track">
+                <div class="slide">
+                    <div class="slide-img">
+                        <img src="eye glitter.jpg" alt="Eye Glitter">
+                    </div>
+                    <div class="detail-box">
+                        <h3>Eye Glitter</h3>
+                        <p>Loose</p>
+                        <p class="price" class="price">2000</p>
+                        <p class="buy-btn" onclick="addToCart('Eye Glitter', '2000', 'eye glitter.jpg', 'Loose')">
+                            Add to Cart</p>
+                    </div>
+                </div>
+
+                <div class="slide">
+                    <div class="slide-img">
+                        <img src="foundation.jpg" alt="Product 2">
+                    </div>
+                    <div class="detail-box">
+                        <h3>Foundation</h3>
+                        <p>Liquid</p>
+                        <p class="price">5000</p>
+                        <p class="buy-btn" onclick="addToCart('Foundation', '5000', 'foundation.jpg', 'Liquid')">Add
+                            to
+                            Cart
+                        </p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-img">
+                        <img src="eye shadow pallete.jpg" alt="Product 1">
+                    </div>
+                    <div class="detail-box">
+                        <h3>Eye Shadow Pallete</h3>
+                        <p>Powder</p>
+                        <p class="price">2000</p>
+                        <p class="buy-btn"
+                            onclick="addToCart('Eye Shadow Palette', '2000', 'eye shadow pallete.jpg', 'Cream' )">
+                            Add to Cart</p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-img">
+                        <img src="highlight1.jpg" alt="Product 2">
+                    </div>
+                    <div class="detail-box">
+                        <h3>Blush</h3>
+                        <p>Liquid</p>
+                        <p class="price">2500</p>
+                        <p class="buy-btn" onclick="addToCart('Blush', '2500', 'highlight1.jpg', 'Cream' )">Add to
+                            Cart
+                        </p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-img">
+                        <img src="highlight2.jpg" alt="Primer">
+                    </div>
+                    <div class="detail-box">
+                        <h3>Primer</h3>
+                        <p>Face</p>
+                        <p class="price" class="price">3000</p>
+                        <p class="buy-btn" onclick="addToCart('Primer', '3000', 'highlight2.jpg', 'Face')">Add to
+                            Cart
+                        </p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-img">
+                        <img src="brush.jpg" alt="Brush">
+                    </div>
+                    <div class="detail-box">
+                        <h3>Brush</h3>
+                        <p>Powder</p>
+                        <p class="price" class="price">5000</p>
+                        <p class="buy-btn" onclick="addToCart('Brush', '5000', 'brush.jpg', 'Powder')">Add to Cart
+                        </p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-img">
+                        <img src="mascara.jpg" alt="Mascara">
+                    </div>
+                    <div class="detail-box">
+                        <h3>Mascara</h3>
+                        <p>Colored</p>
+                        <p class="price" class="price">2000</p>
+                        <p class="buy-btn" onclick="addToCart('Mascara', '2000', 'mascara.jpg', 'Colored')">Add to
+                            Cart
+                        </p>
+                    </div>
+                </div>
+                <div class="slide">
+                    <div class="slide-img">
+                        <img src="lipstick.jpg" alt="Lipstick">
+                    </div>
+                    <div class="detail-box">
+                        <h3>Lipstick</h3>
+                        <p>Matte</p>
+                        <p class="price" class="price">3000</p>
+                        <p class="buy-btn" onclick="addToCart('Lipstick', '3000', 'lipstick.jpg', 'Matte')">Add to
+                            Cart
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="slider-navigation">
+                <button class="prev-btn">&#10094;</button>
+                <button class="next-btn">&#10095;</button>
+            </div>
+        </div>
+
+
+
+        <div class="newsletter text-center">
+            <h3>Subscribe to our Newsletter</h3>
+            <p>Stay ahead of the game with Hiver's exclusive promotions and discounts, available only to our loyal
+                subscribers</p>
+            <form>
+                <input type="email">
+                <button type="button" onclick="subscribe()" class="submit-btn">Subscribe</button>
+            </form>
+        </div>
+
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+
+                    <a href="index.html" class="navbar-brand"><span class="color">HI</span>VER</a>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="collections.html">Collection</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <p class="footer-copyright">&copy; 2023 HIVER Makeup Brand. All rights reserved.</p>
+        </footer>
+        <!-- Add this at the end of your HTML, before the closing body tag -->
+
+
+        <script src="index.js"></script>
+        <script src="bootstrap.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </div>
+</body>
+
+</html>

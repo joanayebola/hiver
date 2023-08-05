@@ -31,107 +31,113 @@ window.addEventListener("load", function () {
 
   showContent(); // Show the content after the page fully loads
 });
-const sliderContainer = document.querySelector(".slider-container");
-const sliderTrack = document.querySelector(".slider-track");
-let slides = document.querySelectorAll(".slide");
+const sliderContainer = document.querySelector('.slider-container');
+const sliderTrack = document.querySelector('.slider-track');
+let slides = document.querySelectorAll('.slide');
 let slideWidth = slides[0].offsetWidth;
-let slideIndex = 1; // Start from the first cloned slide
+let slideIndex = 1;
 let touchStartX = 0;
 let touchEndX = 0;
 let isTransitioning = false;
 
 function updateSliderWidth() {
-  slideWidth = slides[0].offsetWidth;
-  sliderTrack.style.width = `${slideWidth * slides.length}px`;
+    slideWidth = slides[0].offsetWidth;
+    sliderTrack.style.width = `${slideWidth * slides.length}px`;
 }
 
 function slideNext() {
-  if (!isTransitioning) {
     slideIndex++;
     slideTo(slideIndex);
-  }
 }
 
 function slideTo(index) {
-  isTransitioning = true;
-  const offset = -slideWidth * index;
-  sliderTrack.style.transform = `translateX(${offset}px)`;
+    isTransitioning = true;
+    const offset = -slideWidth * index;
+    sliderTrack.style.transform = `translateX(${offset}px)`;
 }
 
 function handleTransitionEnd() {
-  if (slideIndex <= 0) {
-    slideIndex = slides.length - 2;
-    sliderTrack.style.transition = "none";
-    sliderTrack.style.transform = `translateX(-${slideWidth * slideIndex}px)`;
-  } else if (slideIndex >= slides.length - 1) {
-    slideIndex = 1;
-    sliderTrack.style.transition = "none";
-    sliderTrack.style.transform = `translateX(-${slideWidth * slideIndex}px)`;
-  }
-
-  setTimeout(() => {
-    sliderTrack.style.transition = "transform 0.5s ease-in-out";
-    isTransitioning = false;
-  }, 50);
+    if (slideIndex <= 0) {
+        slideIndex = slides.length - 2;
+    } else if (slideIndex >= slides.length - 1) {
+        slideIndex = 1;
+    }
+    sliderTrack.style.transition = 'none';
+    slideTo(slideIndex);
+    setTimeout(() => {
+        sliderTrack.style.transition = 'transform 0.5s ease-in-out';
+        isTransitioning = false;
+    }, 50);
 }
 
-document.querySelector(".next-btn").addEventListener("click", slideNext);
+document.querySelector('.next-btn').addEventListener('click', slideNext);
 
 // Adjust the number of visible slides when the window is resized
-window.addEventListener("resize", () => {
-  updateSliderWidth();
-  slideTo(slideIndex);
+window.addEventListener('resize', () => {
+    updateSliderWidth();
+    slideTo(slideIndex);
 });
 
-// Clone slides for infinite loop
+// Clone slides for endless loop
 const firstSlideClone = slides[0].cloneNode(true);
 const lastSlideClone = slides[slides.length - 1].cloneNode(true);
 sliderTrack.appendChild(firstSlideClone);
 sliderTrack.insertBefore(lastSlideClone, slides[0]);
 
 // Update slides after cloning
-slides = document.querySelectorAll(".slide");
+slides = document.querySelectorAll('.slide');
 
 // Initialize slider
 updateSliderWidth();
 slideTo(slideIndex);
 
 // Swipe functionality
-sliderContainer.addEventListener("touchstart", handleTouchStart);
-sliderContainer.addEventListener("touchmove", handleTouchMove);
-sliderContainer.addEventListener("touchend", handleTouchEnd);
+sliderContainer.addEventListener('touchstart', handleTouchStart);
+sliderContainer.addEventListener('touchmove', handleTouchMove);
+sliderContainer.addEventListener('touchend', handleTouchEnd);
 
 function handleTouchStart(event) {
-  touchStartX = event.touches[0].clientX;
+    touchStartX = event.touches[0].clientX;
 }
 
 function handleTouchMove(event) {
-  touchEndX = event.touches[0].clientX;
+    touchEndX = event.touches[0].clientX;
 }
 
 function handleTouchEnd() {
-  const touchDiff = touchEndX - touchStartX;
-  if (touchDiff > 50) {
-    // Swipe right
-    slidePrev();
-  } else if (touchDiff < -50) {
-    // Swipe left
-    slideNext();
-  }
+    const touchDiff = touchEndX - touchStartX;
+    if (touchDiff > 50) {
+        // Swipe right
+        slidePrev();
+    } else if (touchDiff < -50) {
+        // Swipe left
+        slideNext();
+    }
 
-  touchStartX = 0;
-  touchEndX = 0;
+    touchStartX = 0;
+    touchEndX = 0;
 }
 
 function slidePrev() {
-  if (!isTransitioning) {
     slideIndex--;
     slideTo(slideIndex);
-  }
 }
 
-// Reset slider when transition ends for infinite loop
-sliderTrack.addEventListener("transitionend", handleTransitionEnd);
+// Continuously slide through the products automatically
+let slideInterval = setInterval(slideNext, 3000);
+
+// Pause auto-slide when hovering on the slider
+sliderContainer.addEventListener('mouseenter', () => {
+    clearInterval(slideInterval);
+});
+
+// Resume auto-slide when mouse leaves the slider
+sliderContainer.addEventListener('mouseleave', () => {
+    slideInterval = setInterval(slideNext, 3000);
+});
+
+// Reset slider when transition ends for endless loop
+sliderTrack.addEventListener('transitionend', handleTransitionEnd);
 
 // function addToCart(
 //   productName,
